@@ -1,6 +1,7 @@
 //Initialize the Dialogue
 execVM "dialogue.sqf";
-
+execVM "loot.sqf";
+execVM "lootBandits.sqf";
 
 //Action: Medic!!
 medic1 addAction ["<t color='#F00000'>I'm hurt. Patch me up, doc.</t>", {
