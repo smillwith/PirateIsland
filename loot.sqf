@@ -6,25 +6,52 @@ dingus_fnc_FillLoot = {
 
   _backpacks = ["B_AssaultPack_blk", "B_FieldPack_blk"];
 
+
+//this addItemToVest "ACE_CableTie";
+//this addItemToVest "ACE_personalAidKit";
+this addItemToVest "ACE_HandFlare_Green";
+this addItemToVest "ACE_HandFlare_Red";
+this addItemToVest "ACE_HandFlare_White";
+this addItemToVest "ACE_HandFlare_Yellow";
+this addItemToVest "SmokeShellBlue";
+
+
   _commonItems = [
+    "ACE_CableTie", "ACE_CableTie", "ACE_CableTie", "ACE_CableTie",
+
     "ACE_Flashlight_MX991", "ACE_Flashlight_XL50",
     "ACE_Flashlight_MX991", "ACE_Flashlight_XL50",
+
     "ACE_microDAGR",
-    "ACE_morphine", "ACE_packingBandage", "ACE_salineIV_500", "ACE_salineIV",
-    "ACE_morphine", "ACE_packingBandage",
+
+    "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing",
+    "ACE_salineIV_500", "ACE_salineIV",
+    "ACE_morphine", "ACE_morphine",
+    "ACE_packingBandage", "ACE_packingBandage",
+    "ACE_epinephrine", "ACE_epinephrine","ACE_epinephrine", "ACE_epinephrine",
+
     "ToolKit",
-    "muzzle_snds_B", "muzzle_snds_M", "muzzle_snds_acp", "muzzle_snds_L", 
-    "acc_flashlight", "acc_flashlight", "acc_flashlight", "acc_flashlight",
-    "optic_Hamr", "optic_ACO_grn_smg", "optic_Holosight",
+
     "SMG_01_F",
+
+    "muzzle_snds_B", "muzzle_snds_M", "muzzle_snds_acp", "muzzle_snds_L", 
+
+    "acc_flashlight", "acc_flashlight", "acc_flashlight", "acc_flashlight",
+
+    "optic_Hamr", "optic_ACO_grn_smg", "optic_Holosight",
+
     "optic_Holosight_smg_blk_F",
+
+    "SmokeShellBlue", "SmokeShellYellow", "SmokeShellRed", "SmokeShellPurple",
+
     "Chemlight_Blue", "Chemlight_Green", "Chemlight_Red", "Chemlight_Yellow",
     "Chemlight_Blue", "Chemlight_Green", "Chemlight_Red", "Chemlight_Yellow",
     "Chemlight_Blue", "Chemlight_Green", "Chemlight_Red", "Chemlight_Yellow", 
-    "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing"
+
+    "ACE_HandFlare_Green", "ACE_HandFlare_Red", "ACE_HandFlare_White", "ACE_HandFlare_Yellow"
   ];
 
-  _eliteItems = ["arifle_MXC_Black_F", "hgun_PDW2000_F", "arifle_Mk20C_plain_F", "SMG_01_F", ""];
+  _eliteItems = ["arifle_MXC_Black_F", "hgun_PDW2000_F", "arifle_Mk20C_plain_F", "SMG_01_F", "NVGoggles_indep"];
 
   _magazines = ["10Rnd_9x21_Mag", "10Rnd_9x21_Mag", "30Rnd_9x21_Mag", "30Rnd_65x39_caseless_mag", "30Rnd_556x45_Stanag", "30Rnd_45ACP_Mag_SMG_01"];
 

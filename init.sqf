@@ -4,6 +4,10 @@ execVM "loot.sqf";
 execVM "lootBandits.sqf";
 execVM "sleepingBags.sqf";
 
+//Initialize variables
+missionNamespace setVariable ["survivorCompanion", '0'];
+
+
 //Action: Medic!!
 medic1 addAction ["<t color='#F00000'>I'm hurt. Patch me up, doc.</t>", {
   _this select 0 action ["HealSoldier", _this select 1];
@@ -12,4 +16,12 @@ medic1 addAction ["<t color='#F00000'>I'm hurt. Patch me up, doc.</t>", {
 medic1 addAction ["<t color='#FFFFFF'>Who are you?</t>", {
   call dingus_fnc_MedicIntro;
 }, [], 1.5, true, true, "", ""];
+
+
+
+
+//Add some stuff to player0
+player0 addItemToVest "ACE_personalAidKit";
+
+
 
