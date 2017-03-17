@@ -1,0 +1,18 @@
+class CfgRadio
+{
+  sounds[] = {};
+  class HeadedHome
+  {
+    name = "";
+    sound[] = {"\radio\headed-home.ogg", db-100, 1.0};
+    title = "Headed home huh, sir?";
+  };
+
+  class BailBailBail
+  {
+    name = "";
+    sound[] = {"\radio\headed-home.ogg", db-100, 1.0};
+    title = "All engines have flamed out. Bail! Bail! Bail!";
+  };
+
+};

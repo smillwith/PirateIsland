@@ -9,4 +9,4 @@ dingus_fnc_survivorCompanion = {
   missionNamespace setVariable ["survivorCompanion", '1'];
 };
 
-survivor1 addAction ["<t color='#FFFFFF'>Do you want to come with me?</t>", "[] call dingus_fnc_survivorCompanion", [], 1.5, true, true, "", "captive survivor1 == false && missionNamespace getVariable ['survivorCompanion', '0'] == '0';"];
+survivor1 addAction ["<t color='#FFFFFF'>Do you want to come with me?</t>", "[] call dingus_fnc_survivorCompanion", [], 1.5, true, true, "", "missionNamespace getVariable ['survivorCompanion', '0'] == '0';"];

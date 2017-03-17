@@ -6,16 +6,6 @@ dingus_fnc_FillLoot = {
 
   _backpacks = ["B_AssaultPack_blk", "B_FieldPack_blk"];
 
-
-//this addItemToVest "ACE_CableTie";
-//this addItemToVest "ACE_personalAidKit";
-this addItemToVest "ACE_HandFlare_Green";
-this addItemToVest "ACE_HandFlare_Red";
-this addItemToVest "ACE_HandFlare_White";
-this addItemToVest "ACE_HandFlare_Yellow";
-this addItemToVest "SmokeShellBlue";
-
-
   _commonItems = [
     "ACE_CableTie", "ACE_CableTie", "ACE_CableTie", "ACE_CableTie",
 
@@ -51,9 +41,9 @@ this addItemToVest "SmokeShellBlue";
     "ACE_HandFlare_Green", "ACE_HandFlare_Red", "ACE_HandFlare_White", "ACE_HandFlare_Yellow"
   ];
 
-  _eliteItems = ["arifle_MXC_Black_F", "hgun_PDW2000_F", "arifle_Mk20C_plain_F", "SMG_01_F", "NVGoggles_indep"];
+  _eliteItems = ["arifle_MXC_Black_F", "arifle_Mk20C_plain_F", "SMG_01_F", "NVGoggles_indep"];
 
-  _magazines = ["10Rnd_9x21_Mag", "10Rnd_9x21_Mag", "30Rnd_9x21_Mag", "30Rnd_65x39_caseless_mag", "30Rnd_556x45_Stanag", "30Rnd_45ACP_Mag_SMG_01"];
+  _magazines = ["10Rnd_9x21_Mag", "10Rnd_9x21_Mag", "30Rnd_65x39_caseless_mag", "30Rnd_556x45_Stanag", "30Rnd_45ACP_Mag_SMG_01"];
 
   //Items that are dropped on NPCs
   //_rareItems = ["ACE_Flashlight_MX991", "ACE_Flashlight_XL50", "ACE_microDAGR", "ACE_morphine", "ACE_packingBandage", "ACE_salineIV_500", "ACE_salineIV", "ToolKit"];
@@ -80,18 +70,19 @@ this addItemToVest "SmokeShellBlue";
     //player0 globalChat (formatText ["Seed: %1", _seed]);
 
     //Always get 1 Magazine
-    _x addMagazineCargo [(_magazines select floor random count _magazines), 1];
+    //_x addMagazineCargo [(_magazines select floor random count _magazines), 1];
 
     //Sometimes you get one more Magazine
     if (_seed mod 3 == 0) then {
       _x addItemCargo [(_magazines select floor random count _magazines), 1];  
     };
 
-    //Always get at least 1 Common item
+    //Always get at least 2 Common items
+    _x addItemCargo [(_commonItems select floor random count _commonItems), 1];
     _x addItemCargo [(_commonItems select floor random count _commonItems), 1];
 
     //Sometimes you get one more Common
-    if (_seed mod 3 == 0) then {
+    if (_seed mod 5 == 0) then {
       _x addItemCargo [(_commonItems select floor random count _commonItems), 1];  
     };
 
@@ -101,7 +92,7 @@ this addItemToVest "SmokeShellBlue";
     };
 
     //Always get 1 clothing
-    _x addItemCargo [(_clothingItems select floor random count _clothingItems), 1];
+    //_x addItemCargo [(_clothingItems select floor random count _clothingItems), 1];
 
     //Sometimes you get a clothing item
     if (_seed mod 2 == 0) then {
@@ -127,6 +118,50 @@ this addItemToVest "SmokeShellBlue";
     _box addItemCargo [_x, 1];
 
   } forEach _eliteItems;
+
+  true;
+};
+
+dingus_fnc_FillLootVehicle = {
+  _commonItems = [
+    "ItemMap", "ItemMap", "ItemMap", "ItemMap",
+    "ItemCompass", "ItemCompass", "ItemCompass", 
+    "ItemRadio", "ItemRadio", "ItemRadio", 
+    "Binocular", "Binocular", "Binocular", 
+
+    "ACE_CableTie", "ACE_CableTie", "ACE_CableTie", "ACE_CableTie",
+
+    "ACE_Flashlight_MX991", "ACE_Flashlight_XL50",
+    "ACE_Flashlight_MX991", "ACE_Flashlight_XL50",
+
+    "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing",
+
+    "ToolKit",
+
+    "acc_flashlight", "acc_flashlight", "acc_flashlight", "acc_flashlight",
+
+    "Chemlight_Blue", "Chemlight_Green", "Chemlight_Red", "Chemlight_Yellow",
+    "Chemlight_Blue", "Chemlight_Green", "Chemlight_Red", "Chemlight_Yellow",
+    "Chemlight_Blue", "Chemlight_Green", "Chemlight_Red", "Chemlight_Yellow", 
+
+    "ACE_HandFlare_Green", "ACE_HandFlare_Red", "ACE_HandFlare_White", "ACE_HandFlare_Yellow"
+  ];
+
+  params ["_vehicles"];
+  
+  {
+    //Pick a number to determine which type of loot we are going to get
+    _seed = floor random 100;
+
+    //Always get at least 1 Common item
+    _x addItemCargo [(_commonItems select floor random count _commonItems), 1];
+
+    //Sometimes you get one more Common
+    if (_seed mod 3 == 0) then {
+      _x addItemCargo [(_commonItems select floor random count _commonItems), 1];  
+    };
+
+  } forEach _vehicles;
 
   true;
 };
